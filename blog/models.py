@@ -4,15 +4,15 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from author.models import AuthorProfile
 
 
-class Category(models.Model):
+class Category(models.Model) :
     name = models.CharField(max_length=50, unique=True)
     date = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
+    def __str__(self) :
         return self.name
 
 
-class Tag(models.Model):
+class Tag(models.Model) :
     name = models.CharField(max_length=20, unique=True)
     date = models.DateTimeField(auto_now_add=True)
 
@@ -20,7 +20,7 @@ class Tag(models.Model):
         return self.name
 
 
-class Post(models.Model):
+class Post(models.Model) :
     title = models.CharField(max_length=200)
     photo = models.ImageField(upload_to='post')
     content = RichTextUploadingField()
@@ -30,5 +30,5 @@ class Post(models.Model):
     is_draft = models.BooleanField(default=False)
     date = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
+    def __str__(self) :
         return self.title
